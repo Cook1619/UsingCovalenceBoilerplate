@@ -5,6 +5,6 @@ import blogsRouter from './blogs';
 let router = Router();
 
 router.use('/people', peopleRouter);
-router.use('./blogs', blogsRouter);
+router.use('/blogs', blogsRouter);
 
 export default router;
