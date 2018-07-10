@@ -25,19 +25,16 @@ class BlogList extends Component {
     }
 
     render() {
-       
-        let blogdata = this.state.blogs.map((blog) => {
-            return (
-                <Fragment>
-                <div key={blog.id}>{this.state.blog}</div>
-                </Fragment>
-            )
-        })
-        return(
-            <div>{blogdata}</div>
+        return (
+            <div>
+                <ul>
+                    {this.state.blogs.map((blog) => {
+                        return <li key={blog.id}>{blog.title} {blog.content}</li>
+                    })}
+                </ul>
+            </div>
         )
     }
-
 }
 
 export default BlogList;
