@@ -15,9 +15,12 @@ router.get('/:id', async (req, res) => {
     res.json(blogs);
 });
 
-router.post('/', async (req,res) => {
-  
-    
+router.post('/', (req,res) => {
+    let body = req.body
+    iHateThisLab.insert(body)
+        .then(id => {
+            res.json(id)
+        })
 })
 
 export default router;
