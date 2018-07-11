@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import BlogDetails from './BlogDetails';
-import { render } from 'react-dom';
+import AddBlog from './AddBlog';
 
 class BlogList extends Component {
 
@@ -28,6 +28,7 @@ class BlogList extends Component {
         })
         return (
             <Fragment>
+                <AddBlog />
                 {blogList}
             </Fragment>
         )
