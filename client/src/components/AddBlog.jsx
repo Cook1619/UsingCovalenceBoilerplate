@@ -10,16 +10,16 @@ class AddBlog extends Component {
         this.handleBlogTitle = this.handleBlogTitle.bind(this);
         this.handleBlogContent = this.handleBlogContent.bind(this);
     }
-    async addBlog(event) {
+    addBlog(event) {
         try {
             fetch('/api/blogs/', {
                 method: 'POST',
                 body: JSON.stringify(event),
-                headers:{
+                headers: {
                     'Content-Type': 'application/json'
                 }
             })
-        }catch (e){
+        } catch (e) {
             console.log(e)
         }
     }
