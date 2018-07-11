@@ -23,9 +23,12 @@ class AddBlog extends Component {
         return(
             <Fragment>
                 <input 
-                placeholder="Write a Blog"
-                value = { this.state.addBlog }
-                onChange = { (event) => this.handleAddBlog(event.target.value)}
+                placeholder="Write a Blog Title"
+                onChange = {this.handleBlogTitle}
+                />
+                <input 
+                placeholder="Enter in Blog Content here"
+                onChange = {this.handleBlogContent}
                 />
                 
             </Fragment>
