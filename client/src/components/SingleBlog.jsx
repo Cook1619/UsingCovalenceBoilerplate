@@ -11,8 +11,8 @@ class SingleBlog extends Component {
     }
     async componentDidMount() {
         try {
-            let res = await fetch(`/` + this.props.match.params.id);
-            let data = await JSON.parse(res);
+            let res = await fetch('/api/blogs/' + this.props.match.params.id);
+            let data = await res.json();
             console.log(data);
             this.setState({
                 blog: data

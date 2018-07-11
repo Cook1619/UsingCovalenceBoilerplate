@@ -17,7 +17,7 @@ class Navigation extends Component {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/api/blogs" component={BlogList} />
-                        <Route path="/:id" component={SingleBlog} />
+                        <Route path="/api/blogs/:id" component={SingleBlog} />
                     </Switch>
                 </Fragment>
             </Router>
