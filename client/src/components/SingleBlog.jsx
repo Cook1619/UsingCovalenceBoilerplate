@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 class SingleBlog extends Component {
 
     constructor(props) {
+        console.log(props);
         super(props);
         this.state = {
             blog: []
@@ -23,8 +24,10 @@ class SingleBlog extends Component {
     }
 
     render() {
+        console.log(this.state.blog)
         return (
             <div>
+            <h1>TEST</h1>
                 <p>{this.state.blog.title}</p>
             </div>
         )
