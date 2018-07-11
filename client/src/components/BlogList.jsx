@@ -12,9 +12,7 @@ class BlogList extends Component {
     }
     async componentDidMount() {
         try {
-            let res = await fetch('/api/blogs', {
-                method: 'GET',
-            });
+            let res = await fetch('/api/blogs/');
             let data = await res.json();
             this.setState({
                 blogs: data
@@ -33,13 +31,6 @@ class BlogList extends Component {
                 {blogList}
             </Fragment>
         )
-        // <div>
-        //     <ul>
-        //         {this.state.blogs.map((blog) => {
-        //             return <li key={blog.id}>{blog.title} {blog.content}</li>
-        //         })}
-        //     </ul>
-        // </div>
     }
 }
 

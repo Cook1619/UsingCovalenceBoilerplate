@@ -12,11 +12,11 @@ class Navigation extends Component {
             <Router>
                 <Fragment>
                     <nav>
-                        <Link to="/api/blogs">Blogs</Link>
+                        <Link to="/blogs">Blogs</Link>
                     </nav>
                     <Switch>
                         <Route exact path="/" component={HomePage} />
-                        <Route exact path="/api/blogs" component={BlogList} />
+                        <Route exact path="/blogs" component={BlogList} />
                         <Route path="/:id" component={SingleBlog} />
                     </Switch>
                 </Fragment>
