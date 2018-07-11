@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 let BlogDetails = ({ blogdata }) => {
@@ -7,7 +7,7 @@ let BlogDetails = ({ blogdata }) => {
         <div className="card">
             <div className="card-header">
                 <div className="card-body">{blogdata.title}
-                    <Link key={blogdata.id} className="btn btn-info float-right" to={`/api/blogs/`+ blogdata.id}>More Details</Link>
+                    <Link key={blogdata.id} className="btn btn-info float-right" to={`/` + blogdata.id}>More Details</Link>
                 </div>
             </div>
         </div>
@@ -15,4 +15,3 @@ let BlogDetails = ({ blogdata }) => {
 }
 
 export default BlogDetails;
-

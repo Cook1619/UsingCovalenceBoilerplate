@@ -12,5 +12,10 @@ router.get('/', (req, res) => {
     });
 
 });
+router.get('/:id', async (req, res) => {
+    let id = req.params.id;
+    let blog = await table.getOne(id);
+    res.json(blog);
+});
 
 export default router;

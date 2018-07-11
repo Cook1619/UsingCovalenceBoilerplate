@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import BlogList from './BlogList';
 import SingleBlog from './SingleBlog';
 import HomePage from './Homepage'
-import GoodbyeWorld from './goodbye';
+
 
 class Navigation extends Component {
 
@@ -17,7 +17,7 @@ class Navigation extends Component {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/api/blogs" component={BlogList} />
-                        <Route path="/api/blogs/:id" component={SingleBlog} />
+                        <Route path="/:id" component={SingleBlog} />
                     </Switch>
                 </Fragment>
             </Router>
