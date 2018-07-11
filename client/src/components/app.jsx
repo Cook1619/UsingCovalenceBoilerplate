@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import BlogList from './BlogList';
 import SingleBlog from './SingleBlog';
+import HomePage from './Homepage'
 import GoodbyeWorld from './goodbye';
 
 class Navigation extends Component {
@@ -10,10 +11,12 @@ class Navigation extends Component {
         return (
             <Router>
                 <Fragment>
-                    <Link to="/goodbye">Goodbye</Link>
+                    <nav>
+                        <Link to="/api/blogs">Blogs</Link>
+                    </nav>
                     <Switch>
-                        <Route exact path="/" component={BlogList} />
-                        <Route path="/goodbye" component={GoodbyeWorld} />
+                        <Route exact path="/" component={HomePage} />
+                        <Route exact path="/api/blogs" component={BlogList} />
                         <Route path="/api/blogs/:id" component={SingleBlog} />
                     </Switch>
                 </Fragment>
