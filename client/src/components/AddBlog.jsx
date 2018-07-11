@@ -4,14 +4,21 @@ class AddBlog extends Component {
     constructor(props){
         super(props);
         this.state = {
-            addBlog: ''
+            title:'',
+            content:''
         }
     }
-    handleAddBlog = (value) => {
+    handleBlogTitle = (event) => {
         this.setState({
-            addBlog: value
+            title: event.target.value
         })
     }
+    handleBlogContent = (event) => {
+        this.setState({
+            content: event.target.value
+        })
+    }
+
     render(){
         return(
             <Fragment>
@@ -20,7 +27,7 @@ class AddBlog extends Component {
                 value = { this.state.addBlog }
                 onChange = { (event) => this.handleAddBlog(event.target.value)}
                 />
-                <button onClick={event => this.props.POST(event)}>Add to Blog</button>
+                
             </Fragment>
         )}
 }

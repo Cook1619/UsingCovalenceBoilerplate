@@ -15,4 +15,9 @@ router.get('/:id', async (req, res) => {
     res.json(blogs);
 });
 
+router.post('/', async (req,res) => {
+  
+    
+})
+
 export default router;
