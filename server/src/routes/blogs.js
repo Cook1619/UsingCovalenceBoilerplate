@@ -15,12 +15,10 @@ router.get('/:id', async (req, res) => {
     res.json(blogs);
 });
 
-router.post('/', (req,res) => {
+router.post('/', async(req,res) => {
     let body = req.body
-    iHateThisLab.insert(body)
-        .then(id => {
-            res.json(id)
-        })
+    let id = await iHateThisLab.insert(body);
+    res.json(id);
 })
 
 export default router;

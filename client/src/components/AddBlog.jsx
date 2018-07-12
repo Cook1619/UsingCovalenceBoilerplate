@@ -10,29 +10,29 @@ class AddBlog extends Component {
         this.handleBlogTitle = this.handleBlogTitle.bind(this);
         this.handleBlogContent = this.handleBlogContent.bind(this);
     }
-    addBlog(event) {
-        try {
-            fetch('/api/blogs/', {
-                method: 'POST',
-                body: JSON.stringify(event),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-        } catch (e) {
-            console.log(e)
+    addBlog() {
+        let blogInfo = {
+            title: this.state.title,
+            text: this.state.text
         }
-    }
-
+            fetch('/api/blogs', {
+                method: 'POST',
+                body: JSON.stringify(blogInfo),
+                headers: new Headers({ 'Content-Type': 'application/json' })
+            }).then(res =>res.json())
+            .catch(error => console.log(error))
+        }
+    
+    
     handleBlogTitle(event) {
         this.setState({
             title: event.target.value
-        })
+        });
     }
     handleBlogContent(event) {
         this.setState({
             content: event.target.value
-        })
+        });
     }
 
     render() {
