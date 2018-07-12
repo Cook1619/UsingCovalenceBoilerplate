@@ -13,7 +13,7 @@ class AddBlog extends Component {
     addBlog() {
         let blogInfo = {
             title: this.state.title,
-            text: this.state.text
+            content: this.state.content,
         }
             fetch('/api/blogs', {
                 method: 'POST',
