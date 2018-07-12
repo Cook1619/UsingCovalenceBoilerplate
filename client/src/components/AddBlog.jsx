@@ -7,23 +7,21 @@ class AddBlog extends Component {
             title: '',
             content: ''
         }
-        this.handleBlogTitle = this.handleBlogTitle.bind(this);
-        this.handleBlogContent = this.handleBlogContent.bind(this);
     }
     addBlog() {
         let blogInfo = {
             title: this.state.title,
             content: this.state.content,
         }
-            fetch('/api/blogs', {
-                method: 'POST',
-                body: JSON.stringify(blogInfo),
-                headers: new Headers({ 'Content-Type': 'application/json' })
-            }).then(res =>res.json())
+        fetch('/api/blogs', {
+            method: 'POST',
+            body: JSON.stringify(blogInfo),
+            headers: new Headers({ 'Content-Type': 'application/json' })
+        }).then(res => res.json())
             .catch(error => console.log(error))
-        }
-    
-    
+    }
+
+
     handleBlogTitle(event) {
         this.setState({
             title: event.target.value
@@ -41,15 +39,15 @@ class AddBlog extends Component {
                 <input
                     type="text"
                     placeholder="Write a Blog Title"
-                    onChange={this.handleBlogTitle}
+                    onChange={this.handleBlogTitle.bind(this)}
                 />
                 <input
                     type="text"
                     placeholder="Enter in Blog Content here"
-                    onChange={this.handleBlogContent}
+                    onChange={this.handleBlogContent.bind(this)}
                 />
                 <button
-                    onClick={this.addBlog}
+                    onClick={this.addBlog.bind(this)}
                 >Post Blog</button>
 
             </Fragment>
